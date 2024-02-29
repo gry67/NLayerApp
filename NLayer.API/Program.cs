@@ -26,6 +26,11 @@ builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
 //Bana bir assembly ver yada type ver ben typeden assembly'i bulurum
 builder.Services.AddAutoMapper(typeof(MapProfile));
 
+builder.Services.AddScoped<IProductRepository,ProductRepository>();
+builder.Services.AddScoped<IProductService, ProductService>();
+
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 builder.Services.AddDbContext<AppDbContext>(x =>
 {
